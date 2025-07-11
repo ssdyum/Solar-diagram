@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafbfc;
+    color: #20232a;
+    margin: 0;
+    padding: 0 0 40px 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1.5em;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.diagram-container {
+    position: relative;
+    width: 900px;
+    height: 340px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #0001;
+    padding: 20px 0;
+}
+
+.component {
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    background: #eaf6fb;
+    border: 2px solid #2196f3;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.icon {
+    font-size: 2em;
+    margin-bottom: 3px;
+}
+
+.label {
+    font-size: 0.97em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+#pv      { left: 20px;   top: 50px;  }
+#scc     { left: 170px;  top: 50px;  }
+#battery { left: 320px;  top: 50px;  }
+#inverter{ left: 470px;  top: 100px; }
+#grid    { left: 20px;   top: 170px; }
+#db      { left: 620px;  top: 170px; }
+#load    { left: 770px;  top: 170px; }
+#relay   { left: 820px;  top: 100px; display:none; }
+#relay   { left: 690px;  top: 240px; display:block; }
+#geyser  { left: 840px;  top: 240px; }
+
+.arrow {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    pointer-events: none;
+}
+.arrow line {
+    stroke: #1976d2;
+    stroke-width: 3;
+    marker-end: url(#arrowhead);
+}
+.arrow polygon {
+    fill: #1976d2;
+}
+
+.notes {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    background: #edf7ed;
+    border-left: 5px solid #43a047;
+    padding: 18px 28px;
+    border-radius: 6px;
+    font-size: 1.07em;
+}
+
+.notes ul {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+
+@media (max-width: 1000px) {
+    .diagram-container, .notes {
+        width: 99vw;
+        max-width: 99vw;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+}
