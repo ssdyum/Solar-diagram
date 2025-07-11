@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hybrid Solar Power System Wiring Diagram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hybrid Solar Power System - Wiring Diagram</h1>
+    <div class="diagram-container">
+        <!-- Solar Panels -->
+        <div class="component" id="pv">
+            <div class="icon">☀️</div>
+            <div class="label">Solar Panels (PV Array)</div>
+        </div>
+        <!-- Arrow: PV → SCC -->
+        <svg class="arrow" style="left:120px;top:60px;"><line x1="0" y1="15" x2="60" y2="15"/><polygon points="55,9 60,15 55,21"/></svg>
+        <!-- SCC / MPPT -->
+        <div class="component" id="scc">
+            <div class="icon">🔋</div>
+            <div class="label">MPPT Charge Controller<br>or Inverter's SCC</div>
+        </div>
+        <!-- Arrow: SCC → Batteries -->
+        <svg class="arrow" style="left:270px;top:60px;"><line x1="0" y1="15" x2="60" y2="15"/><polygon points="55,9 60,15 55,21"/></svg>
+        <!-- Batteries -->
+        <div class="component" id="battery">
+            <div class="icon">🔋</div>
+            <div class="label">Lithium Batteries</div>
+        </div>
+        <!-- Arrow: SCC → Inverter -->
+        <svg class="arrow" style="left:270px;top:110px;"><line x1="0" y1="15" x2="60" y2="15"/><polygon points="55,9 60,15 55,21"/></svg>
+        <!-- Inverter -->
+        <div class="component" id="inverter">
+            <div class="icon">🔄</div>
+            <div class="label">Inverter</div>
+        </div>
+        <!-- Arrow: Battery → Inverter -->
+        <svg class="arrow" style="left:420px;top:85px;transform:rotate(-30deg);"><line x1="0" y1="15" x2="50" y2="15"/><polygon points="45,9 50,15 45,21"/></svg>
+        <!-- Arrow: Grid → Inverter -->
+        <svg class="arrow" style="left:90px;top:190px;"><line x1="0" y1="0" x2="310" y2="-50"/><polygon points="305,-56 310,-50 303,-48"/></svg>
+        <!-- Grid (ESKOM) -->
+        <div class="component" id="grid">
+            <div class="icon">⚡</div>
+            <div class="label">Grid (ESKOM)</div>
+        </div>
+        <!-- Arrow: Grid → DB board -->
+        <svg class="arrow" style="left:120px;top:210px;"><line x1="0" y1="15" x2="500" y2="15"/><polygon points="495,9 500,15 495,21"/></svg>
+        <!-- DB Board -->
+        <div class="component" id="db">
+            <div class="icon">🗂️</div>
+            <div class="label">DB Board<br>(Distribution Board)</div>
+        </div>
+        <!-- Arrow: Inverter → DB Board -->
+        <svg class="arrow" style="left:570px;top:110px;"><line x1="0" y1="15" x2="60" y2="70"/><polygon points="55,75 60,85 50,83"/></svg>
+        <!-- Load Circuits -->
+        <div class="component" id="load">
+            <div class="icon">💡</div>
+            <div class="label">Load Circuits<br>(Excl. Stove & Geyser)</div>
+        </div>
+        <!-- Arrow: DB Board → Load circuits -->
+        <svg class="arrow" style="left:690px;top:195px;"><line x1="0" y1="15" x2="60" y2="15"/><polygon points="55,9 60,15 55,21"/></svg>
+        <!-- Voltage Relay/Contactor -->
+        <div class="component" id="relay">
+            <div class="icon">🔌</div>
+            <div class="label">Voltage Relay<br>or Contactor</div>
+        </div>
+        <!-- Arrow: DB Board → Relay -->
+        <svg class="arrow" style="left:620px;top:210px;"><line x1="0" y1="15" x2="60" y2="15"/><polygon points="55,9 60,15 55,21"/></svg>
+        <!-- Arrow: Relay → Geyser -->
+        <svg class="arrow" style="left:770px;top:210px;"><line x1="0" y1="15" x2="60" y2="15"/><polygon points="55,9 60,15 55,21"/></svg>
+        <!-- Geyser -->
+        <div class="component" id="geyser">
+            <div class="icon">♨️</div>
+            <div class="label">Geyser<br>(No Battery Power)</div>
+        </div>
+    </div>
+    <div class="notes">
+        <h2>Legend & Notes</h2>
+        <ul>
+            <li><b>Arrows</b> indicate the direction of power flow.</li>
+            <li><b>Grid (ESKOM)</b> can supply power directly to DB Board and Inverter.</li>
+            <li><b>Solar power</b> charges batteries and powers loads via Inverter.</li>
+            <li><b>Voltage relay/contactor</b> enables geyser only when Solar or Grid is present. If only battery is available, the relay disconnects the geyser to avoid draining batteries.</li>
+            <li><b>Load circuits</b> exclude stove/geyser to prioritize battery/inverter loads.</li>
+        </ul>
+    </div>
+</body>
+</html>
